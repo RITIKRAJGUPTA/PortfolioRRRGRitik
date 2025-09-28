@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import NavigationBar from "./components/Navbar";
-import { Link } from "react-router-dom";
 import { Container, Button, Card, Badge, Form } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import profileImage from "./assets/profile.jpeg";
 import resumePDF from "./assets/rrgRitikResume.pdf";
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -75,15 +75,32 @@ function App() {
         <Button href={resumePDF} download="rrgRitikResume.pdf" className="mt-2">
           Download Resume
         </Button>
+        <div className="mt-3 d-flex justify-content-center gap-3">
+  <Button
+    variant="outline-primary"
+    href="https://www.linkedin.com/in/rrgritik2001/"
+    target="_blank"
+  >
+    LinkedIn
+  </Button>
+  <Button
+  variant={darkMode ? "light" : "outline-dark"}
+  href="https://github.com/RITIKRAJGUPTA"
+  target="_blank"
+>
+  GitHub
+</Button>
+</div>
       </section>
 
+      {/* Rest of your code remains the same */}
       {/* About */}
       <section id="about" className="pt-5">
         <Container>
           <h2>About Me</h2>
           <p>
-            I’m Ritik, a passionate Software Engineer with experience in React,
-            Node.js, and full-stack development. I’ve worked on projects like a
+            I'm Ritik, a passionate Software Engineer with experience in React,
+            Node.js, and full-stack development. I've worked on projects like a
             gym website, and a job portal.
           </p>
         </Container>
@@ -97,7 +114,7 @@ function App() {
             {[
               {
                 title: "Job Portal",
-                desc: "Browse and purchase books online.",
+                desc: "Allow employers to post job vacancies with details such as job title",
                 repolink: "https://github.com/RITIKRAJGUPTA/job_portal_backend",
                 link: "#",
               },
@@ -112,7 +129,7 @@ function App() {
                 desc: "Fitness plans and trainer profiles.",
                 repolink:
                   "https://github.com/RITIKRAJGUPTA/GYM_WEBSTITE_WITH_EMAIL_FUNCTIONALITY",
-                link: "subtle-fenglisu-e12d0e.netlify.app",
+                link: "https://gymsitebyritik.netlify.app/",
               },
               {
                 title: "JS-Projects",
@@ -240,6 +257,22 @@ function App() {
           </Form>
         </Container>
       </section>
+
+      {/* Footer / Instagram */}
+<footer className="text-center py-4 border-top">
+  <p>
+    © {new Date().getFullYear()} Ritik Raj Gupta |{" "}
+    <a
+      href="https://www.instagram.com/rrgritik_/"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none", color: darkMode ? "#fff" : "#000" }}
+    >
+      Instagram
+    </a>
+  </p>
+</footer>
+
     </div>
   );
 }
