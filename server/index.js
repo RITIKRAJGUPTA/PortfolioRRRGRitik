@@ -53,11 +53,6 @@ Message: ${message}
   }
 });
 
-// Root route (optional for testing)
-app.get("/", (req, res) => {
-  res.json({ status: "ok", message: "Backend is running", timestamp: Date.now() });
-});
-
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
