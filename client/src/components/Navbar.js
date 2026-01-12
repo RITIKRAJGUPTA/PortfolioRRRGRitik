@@ -11,6 +11,7 @@ const NavigationBar = ({ darkMode, setDarkMode }) => {
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#experience">Experience</Nav.Link>
             <Nav.Link href="#projects">Projects</Nav.Link>
             <Nav.Link href="#skills">Skills</Nav.Link>
             <Nav.Link href="#certifications">Certifications</Nav.Link>
@@ -30,3 +31,5 @@ const NavigationBar = ({ darkMode, setDarkMode }) => {
 };
 
 export default NavigationBar;
+
+
