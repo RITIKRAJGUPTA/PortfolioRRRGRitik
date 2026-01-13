@@ -137,17 +137,9 @@ function App() {
       title: "HRMS",
       desc: "Built a complete HR platform to manage employee data, attendance, leave requests, and payroll with secure role-based access control.",
       repolink: "https://github.com/RITIKRAJGUPTA/HRMS-",
-      link: "https://hrmsbyrrgritik-x1ub.onrender.com",
+      link: "https://rrghrmsbyritik.onrender.com",
       tags: ["Full Stack", "React", "Node.js"],
       icon: <FiUsers size={24} />,
-    },
-    {
-      title: "Job Portal",
-      desc: "A platform allowing employers to post job vacancies and candidates to apply. Features advanced filtering and application tracking.",
-      repolink: "https://github.com/RITIKRAJGUPTA/job_portal_backend",
-      link: "#",
-      tags: ["MERN Stack", "REST API"],
-      icon: <FiBriefcase size={24} />,
     },
     {
       title: "NameVerse",
@@ -621,7 +613,7 @@ function App() {
             <small className={darkMode ? "text-light" : "text-muted"}>Live Demos</small>
           </div>
           <div className="col-md-4">
-            <div className="display-6 fw-bold">1</div>
+            <div className="display-6 fw-bold">0</div>
             <small className={darkMode ? "text-light" : "text-muted"}>Coming Soon</small>
           </div>
         </div>
