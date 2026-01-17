@@ -132,40 +132,52 @@ function App() {
   ];
 
   // Projects data
-  const projects = [
-    {
-      title: "HRMS",
-      desc: "Built a complete HR platform to manage employee data, attendance, leave requests, and payroll with secure role-based access control.",
-      repolink: "https://github.com/RITIKRAJGUPTA/HRMS-",
-      link: "https://rrghrmsbyritik.onrender.com",
-      tags: ["Full Stack", "React", "Node.js"],
-      icon: <FiUsers size={24} />,
-    },
-    {
-      title: "NameVerse",
-      desc: "An all-in-one interactive web platform blending creativity, entertainment, and utility in a single seamless experience.",
-      repolink: "https://github.com/RITIKRAJGUPTA/Ritik-s-Insight-Hub---NameVerse",
-      link: "https://nameversebyrrgritik.onrender.com/",
-      tags: ["MERN", "API"],
-      icon: <FiGlobe size={24} />,
-    },
-    {
-      title: "Gym Website",
-      desc: "Modern fitness website with membership plans, trainer profiles, and contact functionality.",
-      repolink: "https://github.com/RITIKRAJGUPTA/GYM_WEBSTITE_WITH_EMAIL_FUNCTIONALITY",
-      link: "https://gymsitebyritik.netlify.app/",
-      tags: ["Frontend", "Responsive"],
-      icon: <FiHeart size={24} />,
-    },
-    {
-      title: "JS Projects Hub",
-      desc: "Collection of interactive JavaScript projects including Color Changer, BMI Generator, and Digital Clock.",
-      repolink: "https://github.com/RITIKRAJGUPTA/JS-Projects",
-      link: "https://jsbyritikk.netlify.app/",
-      tags: ["JavaScript", "UI Components"],
-      icon: <FiCode size={24} />,
-    },
-  ];
+    const projects = [
+  {
+    title: "HRMS",
+    desc: "Built a complete HR platform to manage employee data, attendance, leave requests, and payroll with secure role-based access control.",
+    repolink: "https://github.com/RITIKRAJGUPTA/HRMS-",
+    link: "https://rrghrmsbyritik.onrender.com",
+    liveLinks: [
+      { name: "Live 1", url: "https://rrghrmsbyritik.onrender.com" },
+      { name: "Live 2", url: "https://hrmsbyrrgritik-x1ub.onrender.com" }
+    ],
+    tags: ["Full Stack", "React", "Node.js"],
+    icon: <FiUsers size={24} />,
+  },
+  {
+    title: "NameVerse",
+    desc: "An all-in-one interactive web platform blending creativity, entertainment, and utility in a single seamless experience.",
+    repolink: "https://github.com/RITIKRAJGUPTA/Ritik-s-Insight-Hub---NameVerse",
+    link: "https://nameversebyrrgritik.onrender.com/",
+    liveLinks: [
+      { name: "Live 1", url: "https://nameversebyrrgritik.onrender.com/" },
+      { name: "Live 2", url: "https://rrgnameversebyrrgritik.onrender.com/" }
+    ],
+    tags: ["MERN", "API"],
+    icon: <FiGlobe size={24} />,
+  },
+  {
+    title: "Gym Website",
+    desc: "Modern fitness website with membership plans, trainer profiles, and contact functionality.",
+    repolink: "https://github.com/RITIKRAJGUPTA/GYM_WEBSTITE_WITH_EMAIL_FUNCTIONALITY",
+    link: "https://gymsitebyritik.netlify.app/",
+    liveLinks: [
+      { name: "Live 1", url: "https://gymsitebyritik.netlify.app/" },
+      { name: "Live 2", url: "https://firstgymproject.onrender.com" }
+    ],
+    tags: ["Frontend", "Responsive"],
+    icon: <FiHeart size={24} />,
+  },
+  {
+    title: "JS Projects Hub",
+    desc: "Collection of interactive JavaScript projects including Color Changer, BMI Generator, and Digital Clock.",
+    repolink: "https://github.com/RITIKRAJGUPTA/JS-Projects",
+    link: "https://jsbyritikk.netlify.app/",
+    tags: ["JavaScript", "UI Components"],
+    icon: <FiCode size={24} />,
+  },
+];
 
   // Certifications data
   const certifications = [
@@ -558,41 +570,31 @@ function App() {
                   <FiGitBranch className="me-2" />
                   Code
                 </Button>
-                <Button
-                  variant={proj.title === "Job Portal" ? "secondary" : "primary"}
-                  href={proj.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  disabled={proj.title === "Job Portal"}
-                  className="flex-grow-1 py-2"
-                  style={{
-                    borderRadius: "8px",
-                    background: proj.title === "Job Portal" 
-                      ? undefined 
-                      : darkMode 
-                        ? "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-                        : "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                    border: "none",
-                    transition: "all 0.3s ease"
-                  }}
-                  onMouseEnter={(e) => {
-                    if (proj.title !== "Job Portal") {
-                      e.currentTarget.style.transform = "scale(1.05)";
-                      e.currentTarget.style.boxShadow = darkMode 
-                        ? "0 5px 15px rgba(102, 126, 234, 0.4)" 
-                        : "0 5px 15px rgba(102, 126, 234, 0.3)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (proj.title !== "Job Portal") {
-                      e.currentTarget.style.transform = "scale(1)";
-                      e.currentTarget.style.boxShadow = "none";
-                    }
-                  }}
-                >
-                  <FiEye className="me-2" />
-                  {proj.title === "Job Portal" ? "Coming Soon" : "Live Demo"}
-                </Button>
+                {proj.liveLinks ? (
+  proj.liveLinks.map((l, i) => (
+    <Button
+      key={i}
+      variant="primary"
+      href={l.url}
+      target="_blank"
+      className="flex-grow-1 py-2"
+    >
+      <FiEye className="me-2" />
+      {l.name}
+    </Button>
+  ))
+) : (
+  <Button
+    variant="primary"
+    href={proj.link}
+    target="_blank"
+    className="flex-grow-1 py-2"
+  >
+    <FiEye className="me-2" />
+    Live Demo
+  </Button>
+)}
+
               </div>
             </Card.Body>
           </Card>
