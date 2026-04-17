@@ -25,22 +25,24 @@ import {
   FiSend,
   FiEye,
   FiGitBranch,
-  FiServer,
-  FiDatabase,
   FiTrendingUp,
   FiCalendar,
   FiMapPin,
-  FiBriefcase as FiCase
+  FiBriefcase as FiCase,
+  FiShield,
+  FiWifi
 } from "react-icons/fi";
 
 import { 
   FaReact, 
   FaNodeJs, 
-  FaJsSquare, 
-  FaBootstrap,
   FaInstagram,
-  FaNetworkWired
+  FaDocker,
+  FaLinux,
 } from "react-icons/fa";
+
+import { SiMongodb, SiMysql, SiPostman, SiGit, SiCloudinary } from "react-icons/si";
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -86,35 +88,39 @@ function App() {
   };
 
   // Work Experience data
-  const experiences = [
+ const experiences = [
     {
-      company: "TrackoWorld",
-      location: "Bangalore, India",
-      position: "Networking Engineer",
-      period: "Currently Working",
-      icon: <FaNetworkWired size={24} />,
+      company: "Trackoworld Pvt. Ltd",
+      location: "Bengaluru, Karnataka",
+      position: "Network Engineer",
+      period: "Jan 2026 - Present",
+      icon: <FiWifi size={24} />,
       color: "info",
       responsibilities: [
-        "Designing and implementing network solutions",
-        "Troubleshooting network issues and ensuring optimal performance",
-        "Collaborating with cross-functional teams on infrastructure projects",
-        "Maintaining network security and compliance standards"
+        "Working on BharatNet Project in Lucknow, Uttar Pradesh",
+        "Worked extensively on Exicom power systems, handling alarms like power failure, door open, site down, etc.",
+        "Identified and resolved issues such as site down, link failure, and hardware faults",
+        "Supported preventive and corrective maintenance activities across multiple sites",
+        "Worked on Linux-based systems for monitoring and troubleshooting network devices",
+        "Analyzed system logs and alarms for proactive issue resolution",
+        "Collaborated with field engineers to ensure system uptime and availability",
+        "Gained exposure to real-time infrastructure monitoring and incident handling"
       ],
       current: true
     },
     {
       company: "Binics World Corporation",
-      location: "Mohali, PB",
+      location: "Mohali, Punjab",
       position: "MERN Stack Developer",
-      period: "Aug 2024 - June 2025",
+      period: "Aug 2024 - Aug 2025",
       icon: <FaReact size={24} />,
       color: "primary",
       responsibilities: [
-        "Documentation and Team Collaboration: Closely collaborated with cross-functional teams to collect requirements, record workflows, and provide regular project progress reports",
-        "Enhancements to UI/UX: Worked in tandem with the design team to improve user interfaces, guaranteeing responsiveness and a better experience on all devices",
-        "Frontend Development with React.js: Created and incorporated new modules into existing projects, improving the usability and functionality of the application",
-        "API Integration: Successfully linked frontend modules and backend APIs to retrieve, process, and display dynamic data, ensuring smooth data transfer between client and server",
-        "Code optimization and debugging: Identified and fixed problems in the existing codebase to guarantee effective operation and compliance with React.js coding best practices"
+        "API Integration: Frontend modules and backend APIs have been successfully linked to retrieve, process, and display dynamic data, guaranteeing smooth data transfer between the client and server",
+        "Code optimization and debugging: found and fixed problems in the current codebase to guarantee effective operation and compliance with React.js coding best practices",
+        "Used GitHub for version control and code management",
+        "Tested APIs using Postman and handled backend integration",
+        "Assisted in deploying applications and debugging production issues"
       ],
       current: false
     }
@@ -122,17 +128,22 @@ function App() {
 
   // Skills data
   const skills = [
+    { name: "MERN Stack", level: 88, icon: <FaReact size={20} /> },
+    { name: "MongoDB", level: 85, icon: <SiMongodb size={20} /> },
+    { name: "MySQL", level: 80, icon: <SiMysql size={20} /> },
     { name: "React.js", level: 90, icon: <FaReact size={20} /> },
     { name: "Node.js", level: 85, icon: <FaNodeJs size={20} /> },
-    { name: "MongoDB", level: 80, icon: <FiDatabase size={20} /> },
-    { name: "SQL", level: 75, icon: <FiServer size={20} /> },
-    { name: "JavaScript", level: 90, icon: <FaJsSquare size={20} /> },
-    { name: "Bootstrap", level: 85, icon: <FaBootstrap size={20} /> },
-    { name: "Networking", level: 70, icon: <FaNetworkWired size={20} /> },
+    { name: "Docker", level: 75, icon: <FaDocker size={20} /> },
+    { name: "Linux (Ubuntu, WSL)", level: 80, icon: <FaLinux size={20} /> },
+    { name: "Git & GitHub", level: 85, icon: <SiGit size={20} /> },
+    { name: "Router Troubleshooting", level: 85, icon: <FiWifi size={20} /> },
+    { name: "NOC Operations", level: 80, icon: <FiShield size={20} /> },
+    { name: "Postman", level: 85, icon: <SiPostman size={20} /> },
+    { name: "Cloudinary", level: 75, icon: <SiCloudinary size={20} /> },
   ];
 
   // Projects data
-    const projects = [
+  const projects = [
   {
     title: "HRMS",
     desc: "Built a complete HR platform to manage employee data, attendance, leave requests, and payroll with secure role-based access control.",
@@ -140,7 +151,8 @@ function App() {
     link: "https://rrghrmsbyritik.onrender.com",
     liveLinks: [
       { name: "Live 1", url: "https://rrghrmsbyritik.onrender.com" },
-      { name: "Live 2", url: "https://hrmsbyrrgritik-x1ub.onrender.com" }
+      { name: "Live 2", url: "https://hrmsbyrrgritik-x1ub.onrender.com"},
+      {name: "Docker Repo", url: "https://hub.docker.com/repositories/ritikrajgupta"}
     ],
     tags: ["Full Stack", "React", "Node.js"],
     icon: <FiUsers size={24} />,
@@ -178,6 +190,7 @@ function App() {
     icon: <FiCode size={24} />,
   },
 ];
+
 
   // Certifications data
   const certifications = [
@@ -220,7 +233,7 @@ function App() {
       />
 
       {/* Hero Section */}
-      <section
+       <section
         id="home"
         className="d-flex align-items-center justify-content-center text-center"
         style={{
@@ -250,10 +263,10 @@ function App() {
             </div>
             <h1 className="display-4 fw-bold mb-3">Ritik Raj Gupta</h1>
             <p className="lead mb-4" style={{ fontSize: "1.25rem", opacity: 0.9 }}>
-              Full Stack Developer & Networking Engineer
+              Network Engineer → Full-Stack Developer
             </p>
             <p className="mb-5" style={{ maxWidth: "600px", margin: "0 auto", opacity: 0.8 }}>
-              Passionate about creating elegant solutions to complex problems through clean code and modern technologies.
+              Network Engineer turned Full-Stack Developer with experience in large-scale telecom infrastructure (BharatNet), specializing in troubleshooting, NOC operations, and system reliability.
             </p>
             
             <div className="d-flex flex-wrap justify-content-center gap-3">
@@ -314,11 +327,10 @@ function App() {
             <Col lg={8} className="mx-auto">
               <div className={`p-4 rounded-4 ${darkMode ? 'bg-dark' : 'bg-white'} shadow-lg`}>
                 <p className="lead mb-4">
-                  I'm Ritik, a passionate Software Engineer and Networking professional with expertise in building full-stack applications using React, Node.js, and modern web technologies.
+                  Network Engineer turned Full-Stack Developer with experience in large-scale telecom infrastructure (BharatNet), specializing in troubleshooting, NOC operations, and system reliability.
                 </p>
                 <p className="mb-4">
-                  With hands-on experience in developing scalable web applications like HR management systems, job portals, and interactive platforms, 
-                  I focus on creating efficient, user-friendly solutions that solve real-world problems. Currently expanding my expertise in networking infrastructure.
+                  Proficient in building scalable MERN stack applications with strong skills in API design, database management (MongoDB, MySQL), and performance-focused development. Hands-on experience with modern engineering practices including Git-based workflows, Docker containerization, and CI/CD-driven deployments using Render and Netlify.
                 </p>
                 <div className="row mt-4">
                   <div className="col-md-4 mb-3">
@@ -338,8 +350,8 @@ function App() {
                         <FiCheckCircle className="text-info" size={20} />
                       </div>
                       <div>
-                        <h5 className="mb-1">Networking</h5>
-                        <p className="text-muted mb-0">Infrastructure</p>
+                        <h5 className="mb-1">Network Engineer</h5>
+                        <p className="text-muted mb-0">BharatNet, NOC</p>
                       </div>
                     </div>
                   </div>
@@ -349,8 +361,8 @@ function App() {
                         <FiCheckCircle className="text-success" size={20} />
                       </div>
                       <div>
-                        <h5 className="mb-1">Problem Solving</h5>
-                        <p className="text-muted mb-0">Clean solutions</p>
+                        <h5 className="mb-1">DevOps Ready</h5>
+                        <p className="text-muted mb-0">Docker, CI/CD</p>
                       </div>
                     </div>
                   </div>
@@ -712,6 +724,60 @@ function App() {
                 </div>
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+       {/* Education Section - NEW */}
+      <section id="education" className={`py-5 ${darkMode ? 'bg-dark-subtle' : 'bg-light-subtle'}`}>
+        <Container>
+          <div className="text-center mb-5">
+            <h2 className="display-5 fw-bold mb-3">
+              <FiBriefcase className="me-2" />
+              Education
+            </h2>
+            <div className="underline mx-auto" style={{
+              width: "60px",
+              height: "4px",
+              background: darkMode ? "#0d6efd" : "#667eea",
+              borderRadius: "2px"
+            }}></div>
+          </div>
+
+          <Row className="g-4 justify-content-center">
+            <Col md={6}>
+              <div className={`p-4 rounded-4 ${darkMode ? 'bg-dark' : 'bg-white'} shadow-lg h-100`}>
+                <div className="d-flex align-items-center mb-3">
+                  <div className={`rounded-circle p-2 me-3 ${darkMode ? 'bg-primary-subtle' : 'bg-primary-subtle'}`}>
+                    <span className="text-primary">🎓</span>
+                  </div>
+                  <div>
+                    <h4 className="fw-bold mb-0">Master of Computer Applications</h4>
+                    <p className="text-muted mb-0">Chandigarh University, Mohali</p>
+                  </div>
+                </div>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <span className="badge bg-primary">July 2022 - May 2024</span>
+                  <span className="fw-semibold">GPA: 7.38/10</span>
+                </div>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className={`p-4 rounded-4 ${darkMode ? 'bg-dark' : 'bg-white'} shadow-lg h-100`}>
+                <div className="d-flex align-items-center mb-3">
+                  <div className={`rounded-circle p-2 me-3 ${darkMode ? 'bg-primary-subtle' : 'bg-primary-subtle'}`}>
+                    <span className="text-primary">📚</span>
+                  </div>
+                  <div>
+                    <h4 className="fw-bold mb-0">Bachelor of Computer Applications</h4>
+                    <p className="text-muted mb-0">Himachal Pradesh University, Shimla</p>
+                  </div>
+                </div>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <span className="badge bg-primary">July 2019 - May 2022</span>
+                  <span className="fw-semibold">GPA: 7.80/10</span>
+                </div>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
