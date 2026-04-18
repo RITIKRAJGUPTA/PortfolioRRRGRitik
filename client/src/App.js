@@ -638,53 +638,75 @@ function App() {
 
       {/* Skills Section */}
       <section id="skills" className={`py-5 ${darkMode ? 'bg-dark-subtle' : 'bg-light-subtle'}`}>
-        <Container>
-          <div className="text-center mb-5">
-            <h2 className="display-5 fw-bold mb-3">
-              <FiTool className="me-2" />
-              Technical Skills
-            </h2>
-            <div className="underline mx-auto" style={{
-              width: "60px",
-              height: "4px",
-              background: darkMode ? "#0d6efd" : "#667eea",
-              borderRadius: "2px"
-            }}></div>
-          </div>
+  <Container>
+    <div className="text-center mb-5">
+      <h2 className="display-5 fw-bold mb-3">
+        <FiTool className="me-2" />
+        Technical Skills
+      </h2>
+      <div className="underline mx-auto" style={{
+        width: "60px",
+        height: "4px",
+        background: darkMode ? "#0d6efd" : "#667eea",
+        borderRadius: "2px"
+      }}></div>
+    </div>
 
-          <Row className="g-4">
-            {skills.map((skill, idx) => (
-              <Col md={6} lg={4} key={idx}>
-                <div className={`p-4 rounded-4 ${darkMode ? 'bg-dark' : 'bg-white'} shadow-sm h-100`}>
-                  <div className="d-flex align-items-center mb-3">
-                    <div className={`rounded-circle p-2 me-3 ${darkMode ? 'bg-primary-subtle' : 'bg-light-blue'}`}>
-                      <span className={darkMode ? 'text-primary' : 'text-primary'}>
-                        {skill.icon}
-                      </span>
-                    </div>
-                    <div>
-                      <h5 className="mb-0 fw-semibold">{skill.name}</h5>
-                    </div>
-                    <div className="ms-auto">
-                      <span className="fw-bold">{skill.level}%</span>
-                    </div>
-                  </div>
-                  <div className="progress" style={{ height: "8px" }}>
-                    <div 
-                      className={`progress-bar ${darkMode ? 'bg-primary' : 'bg-gradient'}`}
-                      role="progressbar"
-                      style={{ width: `${skill.level}%` }}
-                      aria-valuenow={skill.level}
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
+    <Row className="g-4">
+      {skills.map((skill, idx) => (
+        <Col md={6} lg={4} key={idx}>
+          <div className={`p-4 rounded-4 ${darkMode ? 'bg-dark' : 'bg-white'} shadow-sm h-100`}>
+            <div className="d-flex align-items-center mb-3">
+              <div className={`rounded-circle p-2 me-3 ${darkMode ? 'bg-primary-subtle' : 'bg-light-blue'}`}
+                style={{
+                  width: "45px",
+                  height: "45px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}>
+                <span className={darkMode ? 'text-primary' : 'text-primary'} style={{ fontSize: "1.25rem" }}>
+                  {skill.icon}
+                </span>
+              </div>
+              <div>
+                <h5 className="mb-0 fw-semibold">{skill.name}</h5>
+              </div>
+            </div>
+            
+            {/* Clean Pill Badges Instead of Percentage */}
+            <div className="mt-3 d-flex gap-2 flex-wrap">
+              {[...Array(5)].map((_, starIdx) => (
+                <div
+                  key={starIdx}
+                  className="rounded-pill"
+                  style={{
+                    width: "30px",
+                    height: "8px",
+                    background: starIdx < Math.round(skill.level / 20)
+                      ? (darkMode ? "#0d6efd" : "#667eea")
+                      : (darkMode ? "#333" : "#e0e0e0"),
+                    borderRadius: "4px",
+                    transition: "all 0.3s ease"
+                  }}
+                />
+              ))}
+            </div>
+            
+            {/* Level Text */}
+            <div className="mt-2">
+              <small className={`${darkMode ? 'text-light-50' : 'text-muted'}`}>
+                {skill.level >= 90 ? "⚡ Expert" : 
+                 skill.level >= 80 ? "🚀 Advanced" : 
+                 skill.level >= 70 ? "💪 Intermediate" : "📚 Beginner"}
+              </small>
+            </div>
+          </div>
+        </Col>
+      ))}
+    </Row>
+  </Container>
+</section>
 
       {/* Certifications Section */}
       <section id="certifications" className="py-5">
