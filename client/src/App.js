@@ -111,7 +111,7 @@ function App() {
     {
       company: "Binics World Corporation",
       location: "Mohali, Punjab",
-      position: "MERN Stack Developer",
+      position: "Software Engineer",
       period: "Aug 2024 - Aug 2025",
       icon: <FaReact size={24} />,
       color: "primary",
@@ -140,6 +140,7 @@ function App() {
     { name: "NOC Operations", level: 80, icon: <FiShield size={20} /> },
     { name: "Postman", level: 85, icon: <SiPostman size={20} /> },
     { name: "Cloudinary", level: 75, icon: <SiCloudinary size={20} /> },
+	{ name: "Github Actions", level: 75, icon: <SiCloudinary size={20} /> },
   ];
 
   // Projects data
