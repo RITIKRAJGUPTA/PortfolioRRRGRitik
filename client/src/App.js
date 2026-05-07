@@ -41,7 +41,7 @@ import {
   FaLinux,
 } from "react-icons/fa";
 
-import { SiMongodb, SiMysql, SiPostman, SiGit, SiCloudinary } from "react-icons/si";
+import { SiMongodb, SiMysql, SiPostman, SiGithubactions, SiVercel, SiGit, SiCloudinary } from "react-icons/si";
 
 
 function App() {
@@ -128,23 +128,37 @@ function App() {
 
   // Skills data
   const skills = [
-    { name: "MERN Stack", level: 88, icon: <FaReact size={20} /> },
-    { name: "MongoDB", level: 85, icon: <SiMongodb size={20} /> },
-    { name: "MySQL", level: 80, icon: <SiMysql size={20} /> },
-    { name: "React.js", level: 90, icon: <FaReact size={20} /> },
-    { name: "Node.js", level: 85, icon: <FaNodeJs size={20} /> },
-    { name: "Docker", level: 75, icon: <FaDocker size={20} /> },
-    { name: "Linux (Ubuntu, WSL)", level: 80, icon: <FaLinux size={20} /> },
-    { name: "Git & GitHub", level: 85, icon: <SiGit size={20} /> },
-    { name: "Router Troubleshooting", level: 85, icon: <FiWifi size={20} /> },
-    { name: "NOC Operations", level: 80, icon: <FiShield size={20} /> },
-    { name: "Postman", level: 85, icon: <SiPostman size={20} /> },
-    { name: "Cloudinary", level: 75, icon: <SiCloudinary size={20} /> },
-	{ name: "Github Actions", level: 75, icon: <SiCloudinary size={20} /> },
-  ];
+  { name: "MERN Stack", level: 88, icon: <FaReact size={20} /> },
+  { name: "MongoDB", level: 85, icon: <SiMongodb size={20} /> },
+  { name: "MySQL", level: 80, icon: <SiMysql size={20} /> },
+  { name: "React.js", level: 90, icon: <FaReact size={20} /> },
+  { name: "Node.js", level: 85, icon: <FaNodeJs size={20} /> },
+  { name: "Docker", level: 75, icon: <FaDocker size={20} /> },
+  { name: "Linux (Ubuntu, WSL)", level: 80, icon: <FaLinux size={20} /> },
+  { name: "Git & GitHub", level: 85, icon: <SiGit size={20} /> },
+  { name: "Router Troubleshooting", level: 85, icon: <FiWifi size={20} /> },
+  { name: "NOC Operations", level: 80, icon: <FiShield size={20} /> },
+  { name: "Postman", level: 85, icon: <SiPostman size={20} /> },
+  { name: "Cloudinary", level: 75, icon: <SiCloudinary size={20} /> },
+  { name: "GitHub Actions", level: 75, icon: <SiGithubactions size={20} /> },   // fixed icon
+  { name: "Vercel", level: 80, icon: <SiVercel size={20} /> },                  // new skill
+];
 
-  // Projects data
+  // Projects data – NEW PROJECT ADDED AS FIRST ENTRY
   const projects = [
+  // START OF NEW PROJECT – SNOC Networking | Operations Hub
+  {
+    title: "SNOC Networking | Operations Hub",
+    desc: "Complete Networking Operations Management System with role-based dashboards (Admin, HR, Manager, Employee). Features include attendance tracking, leave management, task assignment, performance analytics, site infrastructure data management, and real-time notifications. Built with MERN stack and deployed on Vercel.",
+    repolink: "https://github.com/RITIKRAJGUPTA/NetworkHandling",
+    link: "https://snocoperationsrrg.vercel.app",
+    liveLinks: [
+      { name: "Live Demo", url: "https://snocoperationsrrg.vercel.app" }
+    ],
+    tags: ["Full Stack", "React", "Node.js", "MongoDB", "HRMS"],
+    icon: <FiUsers size={24} />,
+  },
+  // END OF NEW PROJECT
   {
     title: "HRMS",
     desc: "Built a complete HR platform to manage employee data, attendance, leave requests, and payroll with secure role-based access control.",
@@ -616,7 +630,7 @@ function App() {
     </Row>
 
     {/* Project Counter */}
-    <div className="mt-5 text-center">
+    {/* <div className="mt-5 text-center">
       <div className={`d-inline-block p-3 rounded-4 ${darkMode ? 'bg-dark-subtle' : 'bg-light-subtle'}`}>
         <div className="row align-items-center">
           <div className="col-md-4 mb-3 mb-md-0">
@@ -633,7 +647,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
   </Container>
 </section>
 
