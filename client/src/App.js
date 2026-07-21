@@ -276,13 +276,31 @@ function App() {
                 }}
               />
             </div>
-            <h1 className="display-4 fw-bold mb-3">Ritik Raj Gupta</h1>
-            <p className="lead mb-4" style={{ fontSize: "1.25rem", opacity: 0.9 }}>
-              Network Engineer → Full-Stack Developer
-            </p>
-            <p className="mb-5" style={{ maxWidth: "600px", margin: "0 auto", opacity: 0.8 }}>
-              Network Engineer turned Full-Stack Developer with experience in large-scale telecom infrastructure (BharatNet), specializing in troubleshooting, NOC operations, and system reliability.
-            </p>
+           <h1 className="display-4 fw-bold mb-3">Ritik Raj Gupta</h1>
+
+<p
+  className="lead mb-4"
+  style={{ fontSize: "1.25rem", opacity: 0.9 }}
+>
+  Network Engineer | MERN Stack Developer
+</p>
+
+<p
+  className="mb-5"
+  style={{
+    maxWidth: "750px",
+    margin: "0 auto",
+    opacity: 0.9,
+    lineHeight: "1.8",
+  }}
+>
+  Network Engineer with hands-on experience in SNOC (State Network Operations
+  Center) supporting the BharatNet Project (UP East). Experienced in HFCL router
+  troubleshooting, Exicom Smart Rack monitoring, EMS administration, telecom
+  infrastructure operations, and network fault resolution. Previously worked as
+  a Software Engineer with expertise in the MERN Stack, REST APIs, Docker,
+  Linux, and modern web application development.
+</p>
             
             <div className="d-flex flex-wrap justify-content-center gap-3">
               <Button
@@ -341,12 +359,24 @@ function App() {
           <Row className="align-items-center">
             <Col lg={8} className="mx-auto">
               <div className={`p-4 rounded-4 ${darkMode ? 'bg-dark' : 'bg-white'} shadow-lg`}>
-                <p className="lead mb-4">
-                  Network Engineer turned Full-Stack Developer with experience in large-scale telecom infrastructure (BharatNet), specializing in troubleshooting, NOC operations, and system reliability.
-                </p>
-                <p className="mb-4">
-                  Proficient in building scalable MERN stack applications with strong skills in API design, database management (MongoDB, MySQL), and performance-focused development. Hands-on experience with modern engineering practices including Git-based workflows, Docker containerization, and CI/CD-driven deployments using Render and Netlify.
-                </p>
+               <p className="lead mb-4">
+  I am currently working as a <strong>Network Engineer</strong> at
+  Trackoworld Pvt. Ltd., supporting the BharatNet Project (UP East) through
+  the State Network Operations Center (SNOC). My responsibilities include
+  monitoring telecom infrastructure, troubleshooting HFCL routers, managing
+  Exicom Smart Rack alarms, administering EMS, coordinating with field
+  engineers, and ensuring high network availability across multiple sites.
+</p>
+
+<p className="mb-4">
+  Prior to my networking career, I worked as a Software Engineer (Support),
+  where I developed and maintained MERN Stack applications, integrated REST
+  APIs, optimized application performance, and used tools such as Docker,
+  Git/GitHub, Postman, Linux, and MongoDB. This combination of networking and
+  software engineering enables me to troubleshoot complex systems, automate
+  workflows, and bridge the gap between infrastructure and application
+  development.
+</p>
                 <div className="row mt-4">
                   <div className="col-md-4 mb-3">
                     <div className="d-flex align-items-center">
@@ -354,8 +384,8 @@ function App() {
                         <FiCheckCircle className="text-primary" size={20} />
                       </div>
                       <div>
-                        <h5 className="mb-1">Full Stack Dev</h5>
-                        <p className="text-muted mb-0">MERN Stack</p>
+<h5 className="mb-1">Network Operations</h5>
+<p className="text-muted mb-0">SNOC • BharatNet</p>
                       </div>
                     </div>
                   </div>
@@ -365,8 +395,8 @@ function App() {
                         <FiCheckCircle className="text-info" size={20} />
                       </div>
                       <div>
-                        <h5 className="mb-1">Network Engineer</h5>
-                        <p className="text-muted mb-0">BharatNet, NOC</p>
+                        <h5 className="mb-1">Telecom Infrastructure</h5>
+<p className="text-muted mb-0">HFCL • Exicom • EMS</p>
                       </div>
                     </div>
                   </div>
@@ -376,8 +406,8 @@ function App() {
                         <FiCheckCircle className="text-success" size={20} />
                       </div>
                       <div>
-                        <h5 className="mb-1">DevOps Ready</h5>
-                        <p className="text-muted mb-0">Docker, CI/CD</p>
+                        <h5 className="mb-1">Software Development</h5>
+<p className="text-muted mb-0">MERN • Docker • Linux</p>
                       </div>
                     </div>
                   </div>
