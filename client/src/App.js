@@ -822,39 +822,57 @@ function App() {
                       </span>
                     </div>
                     <div className="flex-grow-1">
-                      
-<h5 className="fw-bold mb-1">{cert.name}</h5>
+                      <div className="flex-grow-1">
+  <h5 className={`fw-bold mb-1 ${darkMode ? "text-light" : "text-dark"}`}>
+    {cert.name}
+  </h5>
 
-<p className="text-muted mb-2">{cert.issuer}</p>
-
-<span className="badge bg-secondary">{cert.year}</span>
-
-{/* Certification Description */}
-{cert.description && (
-  <p className="text-muted mt-3 mb-3">
-    {cert.description}
+  <p className={`mb-2 ${darkMode ? "text-light" : "text-muted"}`}>
+    {cert.issuer}
   </p>
-)}
 
-{/* Credential ID */}
-{cert.credentialId && (
-  <p className="small mb-2">
-    <strong>Credential ID:</strong> {cert.credentialId}
-  </p>
-)}
+  <span className="badge bg-secondary">{cert.year}</span>
 
-{/* Show Credential Button */}
-{cert.credentialUrl && (
-  <a
-    href={cert.credentialUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn btn-outline-primary btn-sm mt-2"
-  >
-    Show Credential
-  </a>
-)}
+  {/* Certification Description */}
+  {cert.description && (
+    <p
+      className={`mt-3 mb-3 ${
+        darkMode ? "text-light" : "text-muted"
+      }`}
+      style={{
+        opacity: darkMode ? 0.85 : 1,
+        lineHeight: "1.7",
+      }}
+    >
+      {cert.description}
+    </p>
+  )}
 
+  {/* Credential ID */}
+  {cert.credentialId && (
+    <p
+      className={`small mb-2 ${
+        darkMode ? "text-light" : "text-dark"
+      }`}
+    >
+      <strong>Credential ID:</strong> {cert.credentialId}
+    </p>
+  )}
+
+  {/* Show Credential Button */}
+  {cert.credentialUrl && (
+    <a
+      href={cert.credentialUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`btn btn-sm mt-2 ${
+        darkMode ? "btn-outline-light" : "btn-outline-primary"
+      }`}
+    >
+      Show Credential
+    </a>
+  )}
+</div>
                     </div>
                   </div>
                 </div>
