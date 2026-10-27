@@ -208,29 +208,68 @@ function App() {
 
 
   // Certifications data
+
+  // Certifications data
   const certifications = [
     {
-      name: "React.js Certification",
-      issuer: "Springboard by Infosys",
-      year: "2024",
+      name: "React JS",
+      issuer: "Infosys Springboard",
+      year: "Nov 2022",
+      description:
+        "React.js fundamentals and component-based architecture, reusable components, JSX and JavaScript integration, interactive web interfaces, and modern frontend development.",
       icon: <FaReact size={24} />,
       color: "primary",
     },
     {
-      name: "Node.js Certification",
-      issuer: "Springboard by Infosys",
-      year: "2024",
+      name: "Node.js",
+      issuer: "Infosys Springboard",
+      year: "Nov 2022",
+      description:
+        "Node.js fundamentals and runtime environment, server-side JavaScript programming, backend application development, asynchronous programming, and web application development.",
       icon: <FaNodeJs size={24} />,
       color: "success",
     },
     {
-      name: "Business Analytics",
-      issuer: "Advanced Business Analytics Specialization",
-      year: "2023",
+      name: "Advanced Business Analytics",
+      issuer: "University of Colorado Boulder",
+      year: "Sep 2023",
+      description:
+        "Specialization covering data analytics for business, predictive modeling, data-driven decision-making, communicating analytical results, and the Advanced Business Analytics Capstone.",
       icon: <FiTrendingUp size={24} />,
       color: "warning",
+      credentialUrl: "",
+    },
+    {
+      name: "Data Science Professional using R",
+      issuer: "Infosys Springboard",
+      year: "Sep 2023",
+      description:
+        "Foundational knowledge of data science, data analysis and manipulation using R, data visualization, statistical concepts, data-driven problem-solving, and the data science workflow.",
+      icon: <FiTrendingUp size={24} />,
+      color: "info",
+    },
+    {
+      name: "Introduction to Generative AI",
+      issuer: "Google",
+      year: "Oct 2026",
+      description:
+        "Introduction to generative AI concepts and their applications.",
+      icon: <FiCode size={24} />,
+      color: "primary",
+      credentialId: "10946064",
+      credentialUrl: "",
+    },
+    {
+      name: "Career Essentials in Generative AI",
+      issuer: "Microsoft and LinkedIn",
+      year: "Oct 2026",
+      description:
+        "Career-focused learning in generative AI and its applications. Skills include AI for Business and Generative AI.",
+      icon: <FiAward size={24} />,
+      color: "success",
     },
   ];
+
 
   return (
     <div
@@ -783,9 +822,39 @@ function App() {
                       </span>
                     </div>
                     <div className="flex-grow-1">
-                      <h5 className="fw-bold mb-1">{cert.name}</h5>
-                      <p className="text-muted mb-2">{cert.issuer}</p>
-                      <span className="badge bg-secondary">{cert.year}</span>
+                      
+<h5 className="fw-bold mb-1">{cert.name}</h5>
+
+<p className="text-muted mb-2">{cert.issuer}</p>
+
+<span className="badge bg-secondary">{cert.year}</span>
+
+{/* Certification Description */}
+{cert.description && (
+  <p className="text-muted mt-3 mb-3">
+    {cert.description}
+  </p>
+)}
+
+{/* Credential ID */}
+{cert.credentialId && (
+  <p className="small mb-2">
+    <strong>Credential ID:</strong> {cert.credentialId}
+  </p>
+)}
+
+{/* Show Credential Button */}
+{cert.credentialUrl && (
+  <a
+    href={cert.credentialUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn btn-outline-primary btn-sm mt-2"
+  >
+    Show Credential
+  </a>
+)}
+
                     </div>
                   </div>
                 </div>
